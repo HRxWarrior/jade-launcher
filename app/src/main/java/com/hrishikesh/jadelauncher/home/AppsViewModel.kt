@@ -32,7 +32,8 @@ class AppsViewModel(
                     .packageManager
 
             val installedApps =
-                packageManager.getInstalledApplications(0)
+                packageManager
+                    .getInstalledApplications(0)
 
             val appList = installedApps.map {
 
