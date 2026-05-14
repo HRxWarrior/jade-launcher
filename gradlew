@@ -2,11 +2,6 @@
 
 DIR="$(cd "$(dirname "$0")"; pwd)"
 
-WRAPPER_JAR="$DIR/gradle/wrapper/gradle-wrapper.jar"
+CLASSPATH=$DIR/gradle/wrapper/gradle-wrapper.jar
 
-if [ ! -f "$WRAPPER_JAR" ]; then
-  echo "Missing gradle-wrapper.jar"
-  exit 1
-fi
-
-exec java -jar "$WRAPPER_JAR" "$@"
+java -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
