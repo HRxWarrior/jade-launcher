@@ -3,13 +3,10 @@ package com.hrishikesh.jadelauncher
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.hrishikesh.jadelauncher.home.HomeScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -21,20 +18,16 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
 
                 Surface(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
                 ) {
 
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
+                    HomeScreen()
 
-                        Text(
-                            text = "JADE Launcher"
-                        )
-
-                    }
-
+                }
+            }
+        }
+    }
+}
                 }
 
             }
