@@ -2,10 +2,11 @@
 
 DIR="$(cd "$(dirname "$0")"; pwd)"
 
-java -version >/dev/null 2>&1
-if [ $? -ne 0 ]; then
-  echo "Java not found"
+WRAPPER_JAR="$DIR/gradle/wrapper/gradle-wrapper.jar"
+
+if [ ! -f "$WRAPPER_JAR" ]; then
+  echo "Missing gradle-wrapper.jar"
   exit 1
 fi
 
-exec gradle "$@"
+exec java -jar "$WRAPPER_JAR" "$@"
